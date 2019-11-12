@@ -10,3 +10,9 @@ class LoginPageLocators():
     REG_PASS1=(By.CSS_SELECTOR,'input[name="registration-password1"]')
     REG_PASS2=(By.CSS_SELECTOR,'input[name="registration-password2"]')
     REG_BTN=(By.CSS_SELECTOR,'button[name="registration_submit"]')
+class ProductPageLocators():
+    BASKET_BTN=(By.CSS_SELECTOR,".btn-add-to-basket")
+    BOOK=(By.CSS_SELECTOR,".product_main h1")
+    COST=(By.CSS_SELECTOR,'.product_main p[class="price_color"]')
+    COMM_BOOK=(By.CSS_SELECTOR, ".alertinner :nth-child(1)")
+    COMM_COST=(By.CSS_SELECTOR, ".alertinner p strong")
