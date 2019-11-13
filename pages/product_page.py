@@ -1,6 +1,7 @@
 from .base_page import BasePage
 from selenium.webdriver.common.by import By
 from .locators import ProductPageLocators
+from .locators import BasePageLocators
 import time
 class ProductPage(BasePage):
     def add_product_to_basket(self):
@@ -15,3 +16,14 @@ class ProductPage(BasePage):
         assert self.browser.find_element(*ProductPageLocators.BOOK).text==self.browser.find_element(*ProductPageLocators.COMM_BOOK).text,"Book correct!"
         assert self.browser.find_element(*ProductPageLocators.COST).text==self.browser.find_element(*ProductPageLocators.COMM_COST).text,"Cost correct!"
         #time.sleep(5)
+      
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+          "Success message is presented, but should be"
+
+    def should_be_success_message_is_disappear(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
+          "Success message is disappear"
+
+    def should_be_login_link(self):
+        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"

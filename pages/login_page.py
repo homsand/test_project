@@ -26,3 +26,4 @@ class LoginPage(BasePage):
          assert self.is_element_present(*LoginPageLocators.REG_PASS1),"Pass1 is not presented"
          assert self.is_element_present(*LoginPageLocators.REG_PASS2),"Pass2 is not presented"
          assert self.is_element_present(*LoginPageLocators.REG_BTN),"Btn is not presented"
+        
