@@ -3,8 +3,11 @@ from selenium.webdriver.common.by import By
 class BasePageLocators():
     LOGIN_LINK=(By.CSS_SELECTOR,"#login_link")
     LOGIN_LINK_INVALID=(By.CSS_SELECTOR,"#login_link_inc")
+    BASKET_BTN=(By.CSS_SELECTOR,".btn-group a")
+    BASKET_MESSAGE=(By.CSS_SELECTOR,"#content_inner p")
+    BASKET_GOODS=(By.CSS_SELECTOR,".col-sm-6")
 class MainPageLocators():
-    LOGIN_LINK=(By.CSS_SELECTOR,"#login_link")
+    LOGIN_LINK=(By.CSS_SELECTOR,"#login_link")    
 class LoginPageLocators():
     LOGIN_EMAIL=(By.CSS_SELECTOR,'input[name="login-username"]')
     LOGIN_PASS=(By.CSS_SELECTOR,'input[name="login-password"]')
