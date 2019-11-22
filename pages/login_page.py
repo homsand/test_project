@@ -1,5 +1,6 @@
 from .base_page import BasePage
 from .locators import LoginPageLocators
+import time
 
 class LoginPage(BasePage):
     def should_be_login_page(self):
@@ -26,4 +27,12 @@ class LoginPage(BasePage):
          assert self.is_element_present(*LoginPageLocators.REG_PASS1),"Pass1 is not presented"
          assert self.is_element_present(*LoginPageLocators.REG_PASS2),"Pass2 is not presented"
          assert self.is_element_present(*LoginPageLocators.REG_BTN),"Btn is not presented"
+
+    def register_new_user(self,email,password):
+        BasePage.go_to_login_page(self)
+        time.sleep(1)
+        self.browser.find_element(*LoginPageLocators.REG_EMAIL).send_keys(email)
+        self.browser.find_element(*LoginPageLocators.REG_PASS1).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.REG_PASS2).send_keys(password)        
+        self.browser.find_element(*LoginPageLocators.REG_BTN).click()
         

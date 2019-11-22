@@ -6,6 +6,7 @@ class BasePageLocators():
     BASKET_BTN=(By.CSS_SELECTOR,".btn-group a")
     BASKET_MESSAGE=(By.CSS_SELECTOR,"#content_inner p")
     BASKET_GOODS=(By.CSS_SELECTOR,".col-sm-6")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 class MainPageLocators():
     LOGIN_LINK=(By.CSS_SELECTOR,"#login_link")    
 class LoginPageLocators():
