@@ -2,10 +2,9 @@ from .base_page import BasePage
 from selenium.webdriver.common.by import By
 from .locators import ProductPageLocators
 from .locators import BasePageLocators
-import time
+
 class ProductPage(BasePage):
     def add_product_to_basket(self):
-      #  self.browser.execute_script("window.scrollBy(0,40);")
         basket=self.browser.find_element(*ProductPageLocators.BASKET_BTN)
         basket.click()
         BasePage.solve_quiz_and_get_code(self)
@@ -15,11 +14,10 @@ class ProductPage(BasePage):
         print(self.browser.find_element(*ProductPageLocators.COMM_COST).text)
         assert self.browser.find_element(*ProductPageLocators.BOOK).text==self.browser.find_element(*ProductPageLocators.COMM_BOOK).text,"Book correct!"
         assert self.browser.find_element(*ProductPageLocators.COST).text==self.browser.find_element(*ProductPageLocators.COMM_COST).text,"Cost correct!"
-        #time.sleep(5)
-      
+              
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
-          "Success message is presented, but should be"
+          "Success message is presented, but should not be"
 
     def should_be_success_message_is_disappear(self):
         assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
